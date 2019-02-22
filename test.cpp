@@ -5,3 +5,10 @@
 
 #include "catch.hpp"
 #include "bowling.h"
+
+vector<int> v1(21, 0); // Gutter game
+g1 = Game(v1);
+
+TEST_CASE("Gutter Game Scores Zero") {
+    REQUIRE(g1.getScore() == 0);
+}
