@@ -16,12 +16,11 @@ public:
     void setTotal();
     int getTotal() const;
     void scoreRoll(int);
-    void scoreSpare(int, int);
-
 
 private:
     int _totalScore = 0;
     bool _firstRoll = true;
+    bool _isSpare = false;
     vector<int> _scoreboard;
 
 };

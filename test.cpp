@@ -17,12 +17,14 @@ TEST_CASE("Test Bowling Game") {
     // All ones
     vector<int> v2(20, 1);
     Game g2(v2);
+    g2.setTotal();
     SECTION("All ones scores 20")
     REQUIRE(g2.getTotal() == 20);
 
     // Spare in first frame, followed by 3 pins.
     vector<int> v3{4,6,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0};
     Game g3(v3);
+    g3.setTotal();
     SECTION("Spare in first frame, followed by 3 pins, followed by all misses scores 16.")
     REQUIRE(g3.getTotal() == 16);
 }
