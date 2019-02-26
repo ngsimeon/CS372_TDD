@@ -13,7 +13,12 @@ class Game {
 
 public:
     explicit Game(const vector<int> &);
-    int getScore();
+    void setTotal();
+    int getTotal() const;
+    void scoreRoll(int) const;
+    bool isSpare(int) const;
+    bool isStrike(int) const;
+
 
 private:
     int _totalScore = 0;

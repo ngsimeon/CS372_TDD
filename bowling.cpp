@@ -7,12 +7,23 @@
 
 Game::Game(const vector<int> & v) : _scoreboard(v) {}
 
-int Game::getScore() {
-    int total = 0;
-    
+void Game::setTotal() {
+
     for (int i : _scoreboard) {
-        total += i;
+        if(isStrike(i)) {
+            // Score strike
+        }
     }
-    
-    return total;
+}
+
+int Game::getTotal() const {
+    return _totalScore;
+}
+
+bool Game::isSpare(int roll) const {
+
+}
+
+bool Game::isStrike(int roll) const {
+
 }
