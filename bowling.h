@@ -15,13 +15,13 @@ public:
     explicit Game(const vector<int> &);
     void setTotal();
     int getTotal() const;
-    void scoreRoll(int) const;
-    bool isSpare(int) const;
-    bool isStrike(int) const;
+    void scoreRoll(int);
+    void scoreSpare(int, int);
 
 
 private:
     int _totalScore = 0;
+    bool _firstRoll = true;
     vector<int> _scoreboard;
 
 };

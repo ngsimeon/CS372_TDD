@@ -8,10 +8,19 @@
 Game::Game(const vector<int> & v) : _scoreboard(v) {}
 
 void Game::setTotal() {
+    int prevRoll = 0;
 
     for (int i : _scoreboard) {
-        if(isStrike(i)) {
+        if(i == 10 && _firstRoll) {
             // Score strike
+        }
+        else if (prevRoll + i == 10 && !_firstRoll) {
+            // Score spare
+        }
+        else {
+            scoreRoll(i);
+            prevRoll = i;
+            _firstRoll = false;
         }
     }
 }
@@ -20,10 +29,6 @@ int Game::getTotal() const {
     return _totalScore;
 }
 
-bool Game::isSpare(int roll) const {
-
-}
-
-bool Game::isStrike(int roll) const {
-
+void Game::scoreRoll(int roll) {
+    _totalScore += roll;
 }
